@@ -19,6 +19,10 @@ namespace GymManager.UI.Controllers
             //var ticket = await MediatR.Send(new GetTicketByIdQuery { Id = 1 });
             await MediatR.Send(new AddTicketCommand { Name = "New Ticket" });
 
+            _logger.LogInformation("Index page says hello");
+            _logger.LogWarning("Index page says hello");
+            _logger.LogError("Index page says hello");
+
             return View();
         }
 
