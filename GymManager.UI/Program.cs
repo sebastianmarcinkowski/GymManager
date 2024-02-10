@@ -1,5 +1,6 @@
 using GymManager.Application;
 using GymManager.Infrastructure;
+using GymManager.UI.Extensions;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Logging.AddNLogWeb();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
+builder.Services.DefineViewLocation(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 
@@ -24,7 +26,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
