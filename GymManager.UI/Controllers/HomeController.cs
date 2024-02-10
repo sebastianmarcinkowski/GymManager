@@ -1,4 +1,4 @@
-﻿using GymManager.Application.Tickets.Queries.GetTicketById;
+﻿using GymManager.Application.Tickets.Commands.AddTicket;
 using GymManager.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -16,7 +16,8 @@ namespace GymManager.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var ticket = await MediatR.Send(new GetTicketByIdQuery { Id = 1 });
+            //var ticket = await MediatR.Send(new GetTicketByIdQuery { Id = 1 });
+            await MediatR.Send(new AddTicketCommand { Name = "New Ticket" });
 
             return View();
         }
