@@ -14,7 +14,10 @@ public class LoggingBehaviour<TRequest, TResponse>
         _logger = logger;
     }
 
-    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+    public async Task<TResponse> Handle(
+        TRequest request,
+        CancellationToken cancellationToken,
+        RequestHandlerDelegate<TResponse> next)
     {
         var requestName = typeof(TRequest).Name;
 
