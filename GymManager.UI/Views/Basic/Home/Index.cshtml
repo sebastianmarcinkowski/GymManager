@@ -1,8 +1,292 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject IConfiguration configuration
+
+@{
+    var templateKey = configuration.GetSection("TemplateKey").Value;
+    Layout = $"~/Views/{templateKey}/Shared/_LayoutMain.cshtml";
+    ViewData["Title"] = "Strona główna";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="carouselExampleControls" class="carousel slide mt-3 mb-3" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="~/images/carousel-personal.png" class="d-block w-100" alt="carousel-personal">
+        </div>
+
+        <div class="carousel-item">
+            <img src="~/images/carousel-strength.png" class="d-block w-100" alt="carousel-strength">
+        </div>
+
+        <div class="carousel-item">
+            <img src="~/images/carousel-interval.png" class="d-block w-100" alt="carousel-interval">
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="main-description p-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 mt-5 secondary-description">
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-gym.png" class="card-img-top" alt="card-gym"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Siłownia</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-fitness.png" class="card-img-top" alt="card-fitness"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Zajęcia fitness</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-crossfit.png" class="card-img-top" alt="card-crossfit"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Crossfit</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-massage.png" class="card-img-top" alt="card-massage"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Masaże</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-pool.png" class="card-img-top" alt="card-pool"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Basen</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+
+                <img src="~/images/card-trainer.png" class="card-img-top" alt="card-trainer"></img>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Opieka trenera personalnego</h4>
+
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <a href="#" class="btn btn-primary btn-sm">
+                        Zobacz
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <figure class="text-center p-5">
+
+                <blockquote class="blockquote">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </blockquote>
+
+                <figcaption class="blockquote-footer mt-3 secondary-description">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-2 row-cols-md-2">
+
+        <div class="col">
+            <div class="card border-0 mg-5">
+                <div class="card-body text-center secondary-description">
+
+                    <h2 class="card-title">Pojedyńcza wejściówka</h2>
+
+                    <p class="card-text m-4">
+                        Możesz kożystać ze wszystkich usłgu przez 24 godziny. W skład pakietu wchodzi:
+                    </p>
+
+                    <ul class="no-decoration">
+
+                        <li>✅ usługa 1</li>
+
+                        <li>✅ usługa 2</li>
+
+                        <li>✅ usługa 3</li>
+
+                    </ul>
+
+                    <a href="#" class="btn btn-danger btn-lg mt-2">
+                        Kup wejściówkę
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 mg-5">
+                <div class="card-body text-center secondary-description">
+
+                    <h2 class="card-title">Kartnet miesięczny</h2>
+
+                    <p class="card-text m-4">
+                        Możesz kożystać ze wszystkich usłgu przez cały miesiąc. W skład pakietu wchodzi:
+                    </p>
+
+                    <ul class="no-decoration">
+
+                        <li>✅ usługa 1</li>
+
+                        <li>✅ usługa 2</li>
+
+                        <li>✅ usługa 3</li>
+
+                        <li>✅ usługa 4</li>
+
+                        <li>✅ usługa 5</li>
+
+                    </ul>
+
+                    <a href="#" class="btn btn-danger btn-lg mt-2">
+                        Kup karnet
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <figure class="text-center p-5">
+
+                <blockquote class="blockquote">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </blockquote>
+
+                <figcaption class="blockquote-footer mt-3 secondary-description">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+
+            </figure>
+        </div>
+    </div>
 </div>
