@@ -79,8 +79,37 @@
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery.cookie/jquery.cookie.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <div class="privacy-police-info" style="display: none;">
+
+        Serwis wykrzystuje pliki cookies. Korzystając z niego wyrażasz zgodę na ich wykorzystanie zgodnie z polityką prywatności.
+
+        <button onclick="closePrivacyPolice()" type="button" class="btn btn-light btn-sm mx-3 my-1 privacy-police-btn">
+            Ok, rozumiem
+        </button>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            if ($.cookie("privacyPolicy") != "accepted") {
+                $(".privacy-police-info").show();
+            }
+
+        });
+
+        function closePrivacyPolice() {
+            $.cookie("privacyPolicy", "accepted", { expires: 365 });
+            $(".privacy-police-info").hide();
+        }
+
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
