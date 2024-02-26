@@ -22,6 +22,7 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString)
             .EnableSensitiveDataLogging());
 
+        services.AddSingleton<IEmail, Email>();
         services.AddSingleton<IAppSettingsService, AppSettingsService>();
 
         return services;
@@ -30,9 +31,12 @@ public static class DependencyInjection
     public static IApplicationBuilder UseInfrastructure(
         this IApplicationBuilder app,
         IApplicationDbContext context,
-        IAppSettingsService appSettingsService)
+        IAppSettingsService appSettingsService,
+        IEmail email)
     {
         appSettingsService.Update(context).GetAwaiter().GetResult();
+
+        email.Update(appSettingsService).GetAwaiter().GetResult();
 
         return app;
     }

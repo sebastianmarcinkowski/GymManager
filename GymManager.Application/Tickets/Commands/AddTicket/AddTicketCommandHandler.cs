@@ -8,13 +8,6 @@ public class AddTicketCommandHandler : IRequestHandler<AddTicketCommand>
         AddTicketCommand request,
         CancellationToken cancellationToken)
     {
-        //todo: add ticket
-
-        //var ticket = new Ticket
-        //{
-        //    Name = request.Name
-        //};
-
         return Unit.Value;
     }
 }

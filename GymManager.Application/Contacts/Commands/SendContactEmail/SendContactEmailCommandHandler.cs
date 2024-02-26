@@ -8,7 +8,7 @@ public class SendContactEmailCommandHandler
     : IRequestHandler<SendContactEmailCommand>
 {
     private readonly IEmail _email;
-    
+
     private readonly IAppSettingsService _appSettingsService;
 
     public SendContactEmailCommandHandler(

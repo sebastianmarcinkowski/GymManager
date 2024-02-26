@@ -9,11 +9,13 @@ public class PerformanceBehaviour<TRequest, TResponse>
     where TRequest : MediatR.IRequest<TResponse>
 {
     private readonly ILogger<TRequest> _logger;
+
     private readonly Stopwatch _timer;
 
     public PerformanceBehaviour(ILogger<TRequest> logger)
     {
         _timer = new Stopwatch();
+
         _logger = logger;
     }
 
@@ -36,7 +38,9 @@ public class PerformanceBehaviour<TRequest, TResponse>
 
             _logger.LogInformation(
                 "GymManager Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}",
-                requestName, elapsedMilliseconds, request);
+                requestName,
+                elapsedMilliseconds,
+                request);
         }
 
         return response;

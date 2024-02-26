@@ -10,8 +10,6 @@ public class GetTicketByIdQueryHandler : IRequestHandler<GetTicketByIdQuery, Tic
     {
         var id = request.Id;
 
-        //todo: implement logic to get ticket by id
-
         return new TicketDto
         {
             Id = id,
