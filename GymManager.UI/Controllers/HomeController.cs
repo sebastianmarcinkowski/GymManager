@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GymManager.Application.Contacts.Commands.SendContactEmail;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GymManager.UI.Controllers;
 
@@ -23,6 +25,16 @@ public class HomeController : BaseController
 
     public IActionResult Contact()
     {
-        return View();
+        return View(new SendContactEmailCommand());
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Contact(
+        SendContactEmailCommand command)
+    {
+        await MediatR.Send(command);
+
+        return RedirectToAction("Contact");
     }
 }
