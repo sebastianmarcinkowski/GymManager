@@ -1,5 +1,4 @@
 ﻿using GymManager.Application.Contacts.Commands.SendContactEmail;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymManager.UI.Controllers;
@@ -33,7 +32,10 @@ public class HomeController : BaseController
     public async Task<IActionResult> Contact(
         SendContactEmailCommand command)
     {
-        await MediatR.Send(command);
+        var result = await MediatorSendValidate(command);
+
+        if (!result.IsValid)
+            return View(command);
 
         return RedirectToAction("Contact");
     }

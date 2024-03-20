@@ -52,3 +52,8 @@ ul.no-decoration {
 .privacy-police-btn {
     font-size: 11px;
 }
+
+.field-validation-error {
+    color: #f33;
+    margin-left: .5rem;
+}
